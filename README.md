@@ -36,15 +36,27 @@ To easily add a hook that execute the static analysis on `pre-commit`, add the f
 
 ```
 {
+    "scripts": {
+        "post-install-cmd": [
+            "cghooks add --ignore-lock"
+        ],
+        "post-update-cmd": [
+            "cghooks update"
+        ]
+    },
+
     "extra": {
         "hooks": {
             "pre-commit": [
-                "static_analysis",
+                "static_analysis"
             ]
         }
     }
 }
 ```
+
+Note that if commit outside your docker container if you use one, it will be executed outside your container.
+
 
 ## Versioning
 
