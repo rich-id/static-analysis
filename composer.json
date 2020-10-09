@@ -1,0 +1,24 @@
+{
+    "name": "richcongress/static-analysis",
+    "description": "A library to setup quickly the static analysis tools for RichCongress",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nicolas Guilloux",
+            "email": "nguilloux@richcongress.com"
+        }
+    ],
+    "require": {
+        "phpstan/phpstan": "^0.12.48",
+        "nunomaduro/phpinsights": "^1.14",
+        "phpmetrics/phpmetrics": "^2.7",
+        "brainmaestro/composer-git-hooks": "^2.8"
+    },
+    "bin": [
+        "bin/static_analysis"
+    ],
+    "config": {
+        "bin-dir": "bin"
+    }
+}
