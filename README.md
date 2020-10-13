@@ -20,19 +20,19 @@ Create symlinks in the project folder that points to the configuration files:
 
 ```bash
 ln -sr ./vendor/richcongress/static-analysis/configs/phpstan.neon ./
-ln -sr ./vendor/richcongress/static-analysis/configs/phpinsights.neon ./
+ln -sr ./vendor/richcongress/static-analysis/configs/phpinsights.php ./
 ```
 
 If you want rather copying files instead of creating a symlink, juste change `ln` by `cp`:
 
 ```bash
 cp ./vendor/richcongress/static-analysis/configs/phpstan.neon ./
-cp ./vendor/richcongress/static-analysis/configs/phpinsights.neon ./
+cp ./vendor/richcongress/static-analysis/configs/phpinsights.php ./
 ```
 
 #### Git Hook
 
-To easily add a hook that execute the static analysis on `pre-commit`, add the following code to your `composer.json` file:
+To easily add a hook that execute the static analysis on `pre-push`, add the following code to your `composer.json` file:
 
 ```
 {
@@ -47,7 +47,7 @@ To easily add a hook that execute the static analysis on `pre-commit`, add the f
 
     "extra": {
         "hooks": {
-            "pre-commit": [
+            "pre-push": [
                 "static_analysis"
             ]
         }
