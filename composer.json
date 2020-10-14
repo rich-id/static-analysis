@@ -16,7 +16,7 @@
         "brainmaestro/composer-git-hooks": "^2.8"
     },
     "bin": [
-        "static_analysis"
+        "bin/static_analysis"
     ],
     "config": {
         "bin-dir": "bin"
