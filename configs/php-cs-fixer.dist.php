@@ -45,4 +45,5 @@ return (new PhpCsFixer\Config())
             'yoda_style'                      => false,
         ]
     )
-    ->setFinder($finder);
+    ->setFinder($finder)
+    ->setRiskyAllowed(true);
