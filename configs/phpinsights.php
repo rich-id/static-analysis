@@ -29,6 +29,16 @@ return [
 
     'exclude' => [
         'Legacy/',
+        '/assets/',
+        '/bin/',
+        '/elm-stuff/',
+        '/node_modules/',
+        '/private/',
+        '/public/',
+        '/translations/',
+        '/templates/',
+        '/var/',
+        '/vendor/',
     ],
 
     'add' => [
