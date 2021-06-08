@@ -1,0 +1,8 @@
+version: '3.7'
+services:
+    application:
+        container_name: static_analysis_app
+        image: richcongress/php:7.3
+        volumes:
+            - .:/app
+            - ~/.composer:/home/application/.composer

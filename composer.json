@@ -10,10 +10,11 @@
         }
     ],
     "require": {
-        "phpstan/phpstan": "^0.12.48",
-        "nunomaduro/phpinsights": "^1.14",
+        "brainmaestro/composer-git-hooks": "^2.8",
+        "friendsofphp/php-cs-fixer": "^2.0 || ^3.0",
+        "nunomaduro/phpinsights": "^1.0",
         "phpmetrics/phpmetrics": "^2.7",
-        "brainmaestro/composer-git-hooks": "^2.8"
+        "phpstan/phpstan": "^0.12"
     },
     "bin": [
         "bin/static_analysis"

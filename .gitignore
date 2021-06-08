@@ -1,5 +1,10 @@
 # Visual Studio Code
 /.vscode
+/.idea
 
 # Composer
 /vendor/
+
+# Binaries
+/bin
+!/bin/static_analysis

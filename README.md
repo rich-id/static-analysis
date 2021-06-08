@@ -4,7 +4,7 @@
 [![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/richcongress/static-analysis/issues)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE.md)
 
-The static analysis checks if the code fits the configured. In this repository, you'll find a default configuration and a script to easily execute the static analysis.
+The static analysis checks if the code fits the configured. In this repository, you'll find a default configuration, and a script to easily execute the static analysis.
 
 
 ## Installation
@@ -21,6 +21,7 @@ Create symlinks in the project folder that points to the configuration files:
 ```bash
 ln -sr ./vendor/richcongress/static-analysis/configs/phpstan.neon ./
 ln -sr ./vendor/richcongress/static-analysis/configs/phpinsights.php ./
+ln -sr ./vendor/richcongress/static-analysis/configs/php-cs-fixer.dist.php ./.php-cs-fixer.dist.php
 ```
 
 If you want rather copying files instead of creating a symlink, juste change `ln` by `cp`:
@@ -28,6 +29,7 @@ If you want rather copying files instead of creating a symlink, juste change `ln
 ```bash
 cp ./vendor/richcongress/static-analysis/configs/phpstan.neon ./
 cp ./vendor/richcongress/static-analysis/configs/phpinsights.php ./
+cp ./vendor/richcongress/static-analysis/configs/php-cs-fixer.dist.php ./.php-cs-fixer.dist.php
 ```
 
 #### Git Hook
@@ -47,7 +49,11 @@ To easily add a hook that execute the static analysis on `pre-push`, add the fol
 
     "extra": {
         "hooks": {
+            "pre-commit": [
+                "php-cs-fixer fix"
+            ],
             "pre-push": [
+                "php-cs-fixer fix --dry-run",
                 "static_analysis"
             ]
         }
@@ -83,4 +89,4 @@ As a reminder, all contributors are expected to follow our [Code of Conduct](COD
 
 static-analysis is distributed under the terms of the MIT license.
 
-See [LICENSE](LICENSE.md) for details.
+See [LICENSE](LICENSE) for details.
