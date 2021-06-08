@@ -64,6 +64,14 @@ To easily add a hook that execute the static analysis on `pre-push`, add the fol
 Note that if commit outside your docker container if you use one, it will be executed outside your container.
 
 
+### PHP CS Fixer File Watcher
+
+You can setup a file watcher to run php-cs-fixer automatically on file save. For PhpStorm the config `configs/watcherTasks.xml` can be used as an example or if you don't have other watchers in your config, directly copy it to your `.idea/` folder:
+
+```bash
+cp ./vendor/richcongress/static-analysis/configs/watcherTasks.xml .idea/
+```
+
 ## Versioning
 
 static-analysis follows [semantic versioning](https://semver.org/). In short the scheme is MAJOR.MINOR.PATCH where
