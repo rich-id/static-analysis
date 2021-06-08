@@ -2,8 +2,12 @@
 
 declare(strict_types=1);
 
+$workingDirectory = strpos(__DIR__, 'vendor/richcongress/static-analysis') === false
+    ? __DIR__
+    : __DIR__ . '/../../../..';
+
 $finder = (new PhpCsFixer\Finder())
-    ->in(__DIR__)
+    ->in(realpath($workingDirectory))
     ->exclude('var')
     ->exclude('node_modules')
     ->exclude('elm-stuff')

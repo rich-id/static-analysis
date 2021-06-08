@@ -8,5 +8,5 @@ if [[ $BIN_DIR == *"vendor/richcongress/static-analysis/bin"* ]]; then
   BIN_DIR="$BIN_DIR/../../../bin";
 fi
 
-"$BIN_DIR"/phpinsights analyse ./src --no-interaction
+"$BIN_DIR"/phpinsights analyse ./ --no-interaction
 "$BIN_DIR"/phpstan analyse
