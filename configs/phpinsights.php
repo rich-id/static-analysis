@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 return [
     /*
@@ -14,7 +16,7 @@ return [
     |
     */
 
-    'preset' => 'default',
+    'preset' => 'symfony',
 
     /*
     |--------------------------------------------------------------------------
@@ -29,6 +31,7 @@ return [
 
     'exclude' => [
         'Legacy/',
+        'Migrations/',
         '/assets/',
         '/bin/',
         '/elm-stuff/',
@@ -63,12 +66,23 @@ return [
         \SlevomatCodingStandard\Sniffs\TypeHints\ReturnTypeHintSniff::class,
         \SlevomatCodingStandard\Sniffs\Commenting\UselessFunctionDocCommentSniff::class,
         \NunoMaduro\PhpInsights\Domain\Insights\ForbiddenNormalClasses::class,
+        \ObjectCalisthenics\Sniffs\Classes\ForbiddenPublicPropertySniff::class,
+        \NunoMaduro\PhpInsights\Domain\Sniffs\ForbiddenSetterSniff::class,
+        \SlevomatCodingStandard\Sniffs\Commenting\DocCommentSpacingSniff::class,
+        \PhpCsFixer\Fixer\ReturnNotation\ReturnAssignmentFixer::class,
+        \PHP_CodeSniffer\Standards\PSR2\Sniffs\Files\EndFileNewlineSniff::class,
+        \SlevomatCodingStandard\Sniffs\Classes\DisallowLateStaticBindingForConstantsSniff::class,
+        \NunoMaduro\PhpInsights\Domain\Insights\ForbiddenTraits::class,
+        \SlevomatCodingStandard\Sniffs\Classes\SuperfluousTraitNamingSniff::class,
+        \SlevomatCodingStandard\Sniffs\ControlStructures\DisallowEmptySniff::class,
+        \PHP_CodeSniffer\Standards\Generic\Sniffs\CodeAnalysis\EmptyStatementSniff::class,
+
     ],
 
     'config' => [
         \SlevomatCodingStandard\Sniffs\TypeHints\PropertyTypeHintSniff::class => [
             'enableNativeTypeHint' => false,
-            'exclude' => [
+            'exclude'              => [
                 'src/Search/Engine/Query/AggregationQuery.php',
             ],
         ],
@@ -111,9 +125,34 @@ return [
         ],
         \SlevomatCodingStandard\Sniffs\Commenting\DocCommentSpacingSniff::class => [
             'linesCountBetweenAnnotationsGroups' => 0,
-            'annotationsGroups' => [
-                ['@package', '@author', '@copyright']
+            'annotationsGroups'                  => [
+                ['@package', '@author', '@copyright'],
             ],
+        ],
+        \PhpCsFixer\Fixer\ClassNotation\OrderedClassElementsFixer::class => [
+            'order' => [ // List of strings defining order of elements.
+                'use_trait',
+                'constant_public',
+                'constant_protected',
+                'constant_private',
+                'property_public_static',
+                'property_protected_static',
+                'property_private_static',
+                'property_public',
+                'property_protected',
+                'property_private',
+                'construct',
+                'destruct',
+                'magic',
+                'phpunit',
+                'method_public',
+                'method_protected',
+                'method_private',
+            ],
+            'sortAlgorithm' => 'none' // possible values ['none', 'alpha']
+        ],
+        \ObjectCalisthenics\Sniffs\Metrics\PropertyPerClassLimitSniff::class => [
+            'maxCount' => 30,
         ],
     ],
 ];
