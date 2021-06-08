@@ -50,11 +50,11 @@ To easily add a hook that execute the static analysis on `pre-push`, add the fol
     "extra": {
         "hooks": {
             "pre-commit": [
-                "php-cs-fixer fix"
+                "./bin/php-cs-fixer fix"
             ],
             "pre-push": [
-                "php-cs-fixer fix --dry-run",
-                "static_analysis"
+                "./bin/php-cs-fixer fix --dry-run",
+                "./bin/static_analysis"
             ]
         }
     }
