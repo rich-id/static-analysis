@@ -17,20 +17,20 @@ $finder = (new PhpCsFixer\Finder())
 
 return (new PhpCsFixer\Config())
     ->setRules([
-        '@Symfony'                        => true,
-        '@PSR2'                           => true,
-        'braces'                          => [
+        '@Symfony' => true,
+        '@PSR2'    => true,
+        'braces'   => [
             'position_after_functions_and_oop_constructs' => 'next',
         ],
-        'binary_operator_spaces'          => [
+        'binary_operator_spaces' => [
             'operators' => [
                 '=>' => 'align_single_space_minimal',
             ],
         ],
-        'concat_space'                    => ['spacing' => 'one'],
-        'declare_strict_types'            => true,
-        'increment_style'                 => ['style' => 'post'],
-        'native_function_invocation'      => [
+        'concat_space'               => ['spacing' => 'one'],
+        'declare_strict_types'       => true,
+        'increment_style'            => ['style' => 'post'],
+        'native_function_invocation' => [
             'include' => ['@internal'],
             'scope'   => 'namespaced',
             'strict'  => true,
@@ -43,10 +43,11 @@ return (new PhpCsFixer\Config())
             'const'    => 'single',
             'method'   => 'single',
         ],
-        'simplified_if_return'            => true,
-        'single_line_throw'               => false,
-        'void_return'                     => true,
-        'yoda_style'                      => false,
+        'phpdoc_no_useless_inheritdoc' => true,
+        'simplified_if_return'         => true,
+        'single_line_throw'            => false,
+        'void_return'                  => true,
+        'yoda_style'                   => false,
     ])
     ->setFinder($finder)
     ->setRiskyAllowed(true);

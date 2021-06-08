@@ -49,86 +49,40 @@ return [
 
     'remove' => [
         \NunoMaduro\PhpInsights\Domain\Insights\CyclomaticComplexityIsHigh::class,
-        \PHP_CodeSniffer\Standards\Generic\Sniffs\Files\LineLengthSniff::class,
-        \PHP_CodeSniffer\Standards\Generic\Sniffs\Formatting\SpaceAfterNotSniff::class,
-        \SlevomatCodingStandard\Sniffs\Classes\SuperfluousExceptionNamingSniff::class,
-        \SlevomatCodingStandard\Sniffs\Classes\SuperfluousInterfaceNamingSniff::class,
-        \SlevomatCodingStandard\Sniffs\Classes\SuperfluousAbstractClassNamingSniff::class,
-        \SlevomatCodingStandard\Sniffs\ControlStructures\DisallowYodaComparisonSniff::class,
-        \SlevomatCodingStandard\Sniffs\Functions\UnusedParameterSniff::class,
-        \SlevomatCodingStandard\Sniffs\TypeHints\DisallowArrayTypeHintSyntaxSniff::class,
-        \SlevomatCodingStandard\Sniffs\TypeHints\DisallowMixedTypeHintSniff::class,
+        \NunoMaduro\PhpInsights\Domain\Insights\ForbiddenNormalClasses::class,
+        \NunoMaduro\PhpInsights\Domain\Insights\ForbiddenTraits::class,
+        \NunoMaduro\PhpInsights\Domain\Sniffs\ForbiddenSetterSniff::class,
+        \ObjectCalisthenics\Sniffs\Classes\ForbiddenPublicPropertySniff::class,
+        \ObjectCalisthenics\Sniffs\Files\ClassTraitAndInterfaceLengthSniff::class,
         \ObjectCalisthenics\Sniffs\Files\FunctionLengthSniff::class,
         \ObjectCalisthenics\Sniffs\Metrics\MethodPerClassLimitSniff::class,
-        \ObjectCalisthenics\Sniffs\Files\ClassTraitAndInterfaceLengthSniff::class,
+        \ObjectCalisthenics\Sniffs\Metrics\PropertyPerClassLimitSniff::class,
         \ObjectCalisthenics\Sniffs\NamingConventions\ElementNameMinimalLengthSniff::class,
+        \PHP_CodeSniffer\Standards\Generic\Sniffs\CodeAnalysis\EmptyStatementSniff::class,
+        \PHP_CodeSniffer\Standards\Generic\Sniffs\Files\LineLengthSniff::class,
+        \PHP_CodeSniffer\Standards\Generic\Sniffs\Formatting\SpaceAfterNotSniff::class,
+        \PHP_CodeSniffer\Standards\PSR2\Sniffs\Files\EndFileNewlineSniff::class,
+        \PhpCsFixer\Fixer\ReturnNotation\ReturnAssignmentFixer::class,
+        \SlevomatCodingStandard\Sniffs\Classes\DisallowLateStaticBindingForConstantsSniff::class,
+        \SlevomatCodingStandard\Sniffs\Classes\SuperfluousAbstractClassNamingSniff::class,
+        \SlevomatCodingStandard\Sniffs\Classes\SuperfluousExceptionNamingSniff::class,
+        \SlevomatCodingStandard\Sniffs\Classes\SuperfluousInterfaceNamingSniff::class,
+        \SlevomatCodingStandard\Sniffs\Classes\SuperfluousTraitNamingSniff::class,
+        \SlevomatCodingStandard\Sniffs\Commenting\DocCommentSpacingSniff::class,
+        \SlevomatCodingStandard\Sniffs\Commenting\InlineDocCommentDeclarationSniff::class,
+        \SlevomatCodingStandard\Sniffs\Commenting\UselessFunctionDocCommentSniff::class,
+        \SlevomatCodingStandard\Sniffs\ControlStructures\DisallowEmptySniff::class,
+        \SlevomatCodingStandard\Sniffs\ControlStructures\DisallowShortTernaryOperatorSniff::class,
+        \SlevomatCodingStandard\Sniffs\ControlStructures\DisallowYodaComparisonSniff::class,
+        \SlevomatCodingStandard\Sniffs\Functions\UnusedParameterSniff::class,
+        \SlevomatCodingStandard\Sniffs\TypeHints\DeclareStrictTypesSniff::class,
+        \SlevomatCodingStandard\Sniffs\TypeHints\DisallowArrayTypeHintSyntaxSniff::class,
+        \SlevomatCodingStandard\Sniffs\TypeHints\DisallowMixedTypeHintSniff::class,
         \SlevomatCodingStandard\Sniffs\TypeHints\ParameterTypeHintSniff::class,
         \SlevomatCodingStandard\Sniffs\TypeHints\ReturnTypeHintSniff::class,
-        \SlevomatCodingStandard\Sniffs\Commenting\UselessFunctionDocCommentSniff::class,
-        \NunoMaduro\PhpInsights\Domain\Insights\ForbiddenNormalClasses::class,
-        \ObjectCalisthenics\Sniffs\Classes\ForbiddenPublicPropertySniff::class,
-        \NunoMaduro\PhpInsights\Domain\Sniffs\ForbiddenSetterSniff::class,
-        \SlevomatCodingStandard\Sniffs\Commenting\DocCommentSpacingSniff::class,
-        \PhpCsFixer\Fixer\ReturnNotation\ReturnAssignmentFixer::class,
-        \PHP_CodeSniffer\Standards\PSR2\Sniffs\Files\EndFileNewlineSniff::class,
-        \SlevomatCodingStandard\Sniffs\Classes\DisallowLateStaticBindingForConstantsSniff::class,
-        \NunoMaduro\PhpInsights\Domain\Insights\ForbiddenTraits::class,
-        \SlevomatCodingStandard\Sniffs\Classes\SuperfluousTraitNamingSniff::class,
-        \SlevomatCodingStandard\Sniffs\ControlStructures\DisallowEmptySniff::class,
-        \PHP_CodeSniffer\Standards\Generic\Sniffs\CodeAnalysis\EmptyStatementSniff::class,
-
     ],
 
     'config' => [
-        \SlevomatCodingStandard\Sniffs\TypeHints\PropertyTypeHintSniff::class => [
-            'enableNativeTypeHint' => false,
-            'exclude'              => [
-                'src/Search/Engine/Query/AggregationQuery.php',
-            ],
-        ],
-        \SlevomatCodingStandard\Sniffs\Classes\UnusedPrivateElementsSniff::class => [
-            'exclude' => [
-            ],
-        ],
-        \NunoMaduro\PhpInsights\Domain\Insights\ForbiddenNormalClasses::class => [
-            'exclude' => [
-            ],
-        ],
-        \NunoMaduro\PhpInsights\Domain\Sniffs\ForbiddenSetterSniff::class => [
-            'exclude' => [
-                'src/Search/Dto/In/CommonSearchData.php',
-                'src/Search/Dto/In/ProductSearchData.php',
-            ],
-        ],
-        \ObjectCalisthenics\Sniffs\Classes\ForbiddenPublicPropertySniff::class => [
-            'exclude' => [
-                'src/Search/ElasticSearch/Transformer/ProductTransformer.php',
-                'src/Search/Dto/Out/ProductSearchResultData.php',
-                'src/Search/Dto/In/ProductSearchData.php',
-                'src/Search/ElasticSearch/Transformer/AbstractTransformer.php',
-                'src/Search/Engine/ProductSearchEngine.php',
-                'src/Search/Dto/In/CommonSearchData.php',
-            ],
-        ],
-        \SlevomatCodingStandard\Sniffs\Classes\DisallowLateStaticBindingForConstantsSniff::class => [
-            'exclude' => [
-                'src/Search/Engine/Query/Aggregation/AbstractAggregation.php',
-                'src/Search/Engine/Query/Aggregation/BrandAggregation.php',
-                'src/Search/ElasticSearch/Transformer/AbstractTransformer.php',
-            ],
-        ],
-        \SlevomatCodingStandard\Sniffs\TypeHints\DeclareStrictTypesSniff::class => [
-            'newlinesCountBetweenOpenTagAndDeclare' => 0,
-        ],
-        \PhpCsFixer\Fixer\Operator\BinaryOperatorSpacesFixer::class => [
-            'align_double_arrow' => true,
-        ],
-        \SlevomatCodingStandard\Sniffs\Commenting\DocCommentSpacingSniff::class => [
-            'linesCountBetweenAnnotationsGroups' => 0,
-            'annotationsGroups'                  => [
-                ['@package', '@author', '@copyright'],
-            ],
-        ],
         \PhpCsFixer\Fixer\ClassNotation\OrderedClassElementsFixer::class => [
             'order' => [ // List of strings defining order of elements.
                 'use_trait',
@@ -149,10 +103,22 @@ return [
                 'method_protected',
                 'method_private',
             ],
-            'sortAlgorithm' => 'none' // possible values ['none', 'alpha']
+            'sortAlgorithm' => 'none', // possible values ['none', 'alpha']
         ],
-        \ObjectCalisthenics\Sniffs\Metrics\PropertyPerClassLimitSniff::class => [
-            'maxCount' => 30,
+        \PhpCsFixer\Fixer\Operator\BinaryOperatorSpacesFixer::class => [
+            'align_double_arrow' => true,
+        ],
+        \SlevomatCodingStandard\Sniffs\Commenting\DocCommentSpacingSniff::class => [
+            'linesCountBetweenAnnotationsGroups' => 0,
+            'annotationsGroups'                  => [
+                ['@package', '@author', '@copyright'],
+            ],
+        ],
+        \SlevomatCodingStandard\Sniffs\TypeHints\DeclareStrictTypesSniff::class => [
+            'newlinesCountBetweenOpenTagAndDeclare' => 0,
+        ],
+        \SlevomatCodingStandard\Sniffs\TypeHints\PropertyTypeHintSniff::class => [
+            'enableNativeTypeHint' => false,
         ],
     ],
 ];
