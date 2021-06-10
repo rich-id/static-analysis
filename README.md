@@ -24,6 +24,16 @@ ln -sr ./vendor/richcongress/static-analysis/configs/phpinsights.php ./
 ln -sr ./vendor/richcongress/static-analysis/configs/php-cs-fixer.dist.php ./.php-cs-fixer.dist.php
 ```
 
+If you use this method in a bundle you will also want to exclude `phpinsights.php` from your autoloads in your `composer.json`:
+
+```
+{
+    "autoload": {
+		"exclude-from-classmap": ["phpinsights.php"]
+    }
+}
+```
+
 If you want rather copying files instead of creating a symlink, juste change `ln` by `cp`:
 
 ```bash
