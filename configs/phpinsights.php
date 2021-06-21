@@ -103,10 +103,10 @@ return [
                 'method_protected',
                 'method_private',
             ],
-            'sortAlgorithm' => 'none', // possible values ['none', 'alpha']
+            'sort_algorithm' => 'none', // possible values ['none', 'alpha']
         ],
         \PhpCsFixer\Fixer\Operator\BinaryOperatorSpacesFixer::class => [
-            'align_double_arrow' => true,
+            'operators' => ['=>' => 'align_single_space_minimal'],
         ],
         \SlevomatCodingStandard\Sniffs\Commenting\DocCommentSpacingSniff::class => [
             'linesCountBetweenAnnotationsGroups' => 0,
