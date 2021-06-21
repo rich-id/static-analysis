@@ -29,7 +29,7 @@ If you use this method in a bundle you will also want to exclude `phpinsights.ph
 ```
 {
     "autoload": {
-		"exclude-from-classmap": ["phpinsights.php"]
+        "exclude-from-classmap": ["phpinsights.php"]
     }
 }
 ```
