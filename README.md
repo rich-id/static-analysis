@@ -50,10 +50,10 @@ To easily add a hook that execute the static analysis on `pre-push`, add the fol
 {
     "scripts": {
         "post-install-cmd": [
-            "cghooks add --ignore-lock"
+            "[ $COMPOSER_DEV_MODE -eq 0 ] || cghooks add --ignore-lock"
         ],
         "post-update-cmd": [
-            "cghooks update"
+            "[ $COMPOSER_DEV_MODE -eq 0 ] || cghooks update"
         ]
     },
 
