@@ -80,6 +80,7 @@ return [
         \SlevomatCodingStandard\Sniffs\TypeHints\DisallowMixedTypeHintSniff::class,
         \SlevomatCodingStandard\Sniffs\TypeHints\ParameterTypeHintSniff::class,
         \SlevomatCodingStandard\Sniffs\TypeHints\ReturnTypeHintSniff::class,
+        \NunoMaduro\PhpInsights\Domain\Insights\ForbiddenSecurityIssues::class,
     ],
 
     'config' => [
