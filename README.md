@@ -60,11 +60,11 @@ To easily add a hook that execute the static analysis on `pre-push`, add the fol
     "extra": {
         "hooks": {
             "pre-commit": [
-                "docker-compose exec application -T ./bin/php-cs-fixer fix -n"
+                "docker-compose exec -T application ./vendor/friendsofphp/php-cs-fixer/php-cs-fixer fix -n"
             ],
             "pre-push": [
-                "docker-compose exec application -T ./bin/php-cs-fixer fix --dry-run -n",
-                "docker-compose exec application -T ./bin/static_analysis -n"
+                "docker-compose exec -T application ./vendor/friendsofphp/php-cs-fixer/php-cs-fixer fix --dry-run -n",
+                "docker-compose exec -T application ./vendor/richcongress/static-analysis/bin/static_analysis"
             ]
         }
     }
