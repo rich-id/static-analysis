@@ -81,6 +81,7 @@ return [
         \SlevomatCodingStandard\Sniffs\TypeHints\ParameterTypeHintSniff::class,
         \SlevomatCodingStandard\Sniffs\TypeHints\ReturnTypeHintSniff::class,
         \NunoMaduro\PhpInsights\Domain\Insights\ForbiddenSecurityIssues::class,
+        \SlevomatCodingStandard\Sniffs\Classes\ForbiddenPublicPropertySniff::class,
     ],
 
     'config' => [
@@ -120,6 +121,9 @@ return [
         ],
         \SlevomatCodingStandard\Sniffs\TypeHints\PropertyTypeHintSniff::class => [
             'enableNativeTypeHint' => false,
+        ],
+        \SlevomatCodingStandard\Sniffs\Functions\FunctionLengthSniff::class => [
+            'maxLinesLength' => 40,
         ],
     ],
 ];
