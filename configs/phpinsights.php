@@ -82,6 +82,7 @@ return [
         \SlevomatCodingStandard\Sniffs\TypeHints\ReturnTypeHintSniff::class,
         \NunoMaduro\PhpInsights\Domain\Insights\ForbiddenSecurityIssues::class,
         \SlevomatCodingStandard\Sniffs\Classes\ForbiddenPublicPropertySniff::class,
+        \NunoMaduro\PhpInsights\Domain\Insights\Composer\ComposerMustBeValid::class,
     ],
 
     'config' => [
