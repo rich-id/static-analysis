@@ -55,7 +55,7 @@ return (new PhpCsFixer\Config())
             ['property', 'property-read', 'property-write'],
             ['ORM\\*'],
             ['Assert\\*', 'Constraint\\*', 'Constraints\\*', 'MapTo', 'Field', 'SubKey'],
-            ['Rest\\*'],
+            ['Rest\\*', 'OA\\*', 'SWG\\*', 'Nelmio\\*'],
         ]],
     ])
     ->setFinder($finder)
