@@ -48,6 +48,15 @@ return (new PhpCsFixer\Config())
         'single_line_throw'            => false,
         'void_return'                  => true,
         'yoda_style'                   => false,
+        'phpdoc_separation'            => ['groups' => [
+            ['deprecated', 'link', 'see', 'since'],
+            ['author', 'copyright', 'license'],
+            ['category', 'package', 'subpackage'],
+            ['property', 'property-read', 'property-write'],
+            ['ORM\\*'],
+            ['Assert\\*', 'Constraint\\*', 'Constraints\\*', 'MapTo', 'Field', 'SubKey'],
+            ['Rest\\*'],
+        ]],
     ])
     ->setFinder($finder)
     ->setRiskyAllowed(true);
