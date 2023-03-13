@@ -4,5 +4,5 @@ parameters:
         - src
         - tests
 
-    excludes_analyse:
-        - src/Legacy
+    excludePaths:
+        - src/Legacy/*
