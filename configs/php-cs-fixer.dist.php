@@ -7,10 +7,17 @@ $workingDirectory = strpos(__DIR__, 'vendor/richcongress/static-analysis') === f
     : __DIR__ . '/../../../..';
 
 $finder = (new PhpCsFixer\Finder())
-    ->in(realpath($workingDirectory))
-    ->exclude('var')
-    ->exclude('node_modules')
+    ->in(__DIR__)
+    ->exclude('assets')
+    ->exclude('bin')
+    ->exclude('docker')
     ->exclude('elm-stuff')
+    ->exclude('node_modules')
+    ->exclude('public')
+    ->exclude('taskfiles')
+    ->exclude('templates')
+    ->exclude('translations')
+    ->exclude('var')
     ->exclude('reports')
     ->exclude('coverage')
     ->exclude('vendor');
@@ -57,6 +64,8 @@ return (new PhpCsFixer\Config())
             ['Assert\\*', 'Constraint\\*', 'Constraints\\*', 'MapTo', 'Field', 'SubKey'],
             ['Rest\\*', 'OA\\*', 'SWG\\*', 'Nelmio\\*'],
         ]],
+        'nullable_type_declaration_for_default_null_value' => ['use_nullable_type_declaration' => true],
+        'no_superfluous_phpdoc_tags'                       => ['allow_mixed' => true],
     ])
     ->setFinder($finder)
     ->setRiskyAllowed(true);
